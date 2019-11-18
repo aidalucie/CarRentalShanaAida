@@ -40,6 +40,14 @@ public class CarWebService {
     @ResponseStatus(HttpStatus.OK)
     public Car aCar(@PathVariable("plateNumber") String plateNumber) throws Exception
     {
+        Car car = null ;
+
+        for ( Car c : cars)
+        {
+            if (c.getPlateNumber().equals(plateNumber)) car = c;
+            System.out.println("OK");
+        }
+
         return car;
     }
     /*

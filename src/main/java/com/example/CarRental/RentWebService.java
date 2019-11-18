@@ -34,7 +34,7 @@ public class RentWebService {
     }
 
     @RequestMapping(value = "/rents/{plateNumber}", method = RequestMethod.GET)
-    public Rent rent(@PathVariable("plateNumber") String plateNumber//,
+    public Rent showArent(@PathVariable("plateNumber") String plateNumber//,
                     // @RequestParam(value="rent", required = true)boolean rent,
                      //@RequestBody Date begindate
                      //@RequestBody Date enddate
