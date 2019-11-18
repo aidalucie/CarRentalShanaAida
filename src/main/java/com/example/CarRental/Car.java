@@ -5,16 +5,29 @@ public class Car {
     private String plateNumber;
     private String brand;
     private int price;
+    private boolean rent;
+
+    public int getNumberOfSeats() {
+        return numberOfSeats;
+    }
+
+    public void setNumberOfSeats(int numberOfSeats) {
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    private int numberOfSeats;
 
     public Car() {
         super();
     }
 
-    public Car(String plateNumber, String brand, int price) {
+    public Car(String plateNumber, String brand, int price, int numberOfSeats) {
         super();
         this.plateNumber = plateNumber;
         this.brand = brand;
         this.price = price;
+        this.numberOfSeats = numberOfSeats;
+        this.rent = true;
     }
 
     public String getPlateNumber() {
@@ -43,7 +56,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car [plateNumber=" + plateNumber + ", brand=" + brand + ", price=" + price + "]";
+        return "Car [plateNumber=" + plateNumber + ", numberOfSeats=" + numberOfSeats + ", price=" + price + "]";
     }
 
 }

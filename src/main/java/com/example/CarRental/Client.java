@@ -7,15 +7,15 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-public class CarRentalClient {
+public class Client {
 
-    private static final Logger log = LoggerFactory.getLogger(CarRentalClient.class);
+    private static final Logger log = LoggerFactory.getLogger(Client.class);
 
     public static void main(String[] args) {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        HttpEntity<Car> request = new HttpEntity<>(new Car("44QQ66", "Peugeot", 12));
+        HttpEntity<Car> request = new HttpEntity<>(new Car("44QQ66", "Peugeot", 12, 3));
         restTemplate.postForObject("http://localhost:8080/cars", request, Car.class);
 
 
