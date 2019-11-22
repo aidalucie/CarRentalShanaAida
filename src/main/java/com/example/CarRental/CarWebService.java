@@ -50,6 +50,12 @@ public class CarWebService {
 
         return car;
     }
+
+    @RequestMapping(value = "/rents/{plateNumber}?rent=true", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    public void rent(@PathVariable("plateNumber") String plateNumber) throws Exception{
+    }
+
     /*
 
     @RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.PUT)

@@ -20,17 +20,27 @@ public class RentWebService {
 
     public RentWebService ()
     {
+        try
+        {
 
-        Date begindate = new Date (2019, 02, 15);
-        Date enddate = new Date (2019, 04, 15);
+            SimpleDateFormat simpledate = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.println(begindate);
+            Date begindate = simpledate.parse("15/02/2018");
+            Date enddate = simpledate.parse("15/04/2019");
 
-        Date begindate2 = new Date (2018, 02, 15);
-        Date enddate2 = new Date (2018, 04, 15);
+            Date begindate2 = simpledate.parse("14/07/2017");
+            Date enddate2 = simpledate.parse("15/08/2017");
 
-        rents.add( new Rent (1,"Quelquun",begindate,enddate,"33BB44"));
-        rents.add( new Rent (2,"Quelquun",begindate2,enddate2,"33AA44"));
+
+            rents.add( new Rent (1,"Quelquun",begindate,enddate,"33BB44"));
+            rents.add( new Rent (2,"Quelquun",begindate2,enddate2,"33AA44"));
+        }
+        catch (Exception e)
+        {
+
+        }
+
+
     }
 
     @RequestMapping(value = "/rents/{plateNumber}", method = RequestMethod.GET)
@@ -51,7 +61,10 @@ public class RentWebService {
          return loc;
     }
 
-
+    @RequestMapping(value = "/cars/{plateNumber}", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    public void rent(@PathVariable("plateNumber") String plateNumber) throws Exception{
+    }
 
     
 }
